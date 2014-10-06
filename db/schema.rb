@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006175353) do
+ActiveRecord::Schema.define(version: 20141006193759) do
 
   create_table "ratings", force: true do |t|
     t.integer  "rate"
@@ -30,11 +30,18 @@ ActiveRecord::Schema.define(version: 20141006175353) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email"
+    t.string   "email",                default: "",    null: false
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.boolean  "confirmed",            default: false
   end
+
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

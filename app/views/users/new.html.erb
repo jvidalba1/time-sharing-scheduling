@@ -1,0 +1,6 @@
+<h1>Welcome</h1>
+<p>For a reservation please type your email, you'll receive a confirmation email to continue</p>
+<%= simple_form_for @user do |f| %>
+  <%= f.input :email, placeholder: 'user@domain.com'%>
+  <%= f.button :submit %>
+<% end %>
