@@ -1,2 +1,4 @@
-<h1>Confirmation email</h1>
-<p>Please click in the following link to continue with the reservation</p>
+<h1>Confirmation email for <%= @user.email %></h1>
+<p>-Please click in the following link to continue with the reservation</p>
+<p><%= link_to "Confirm email", edit_user_url(@user.id) %></p>
+<p>Thanks!</p>
