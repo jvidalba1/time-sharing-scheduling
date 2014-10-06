@@ -34,4 +34,5 @@ end
 
 group :development do
   gem 'annotate'
+  gem 'thin'
 end
