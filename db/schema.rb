@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006211052) do
+ActiveRecord::Schema.define(version: 20141007004101) do
 
   create_table "ratings", force: true do |t|
     t.integer  "rate"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 20141006211052) do
     t.string   "trip_reason"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "services", force: true do |t|
+    t.integer "reservation_id"
+    t.boolean "pool"
+    t.boolean "rec_room"
+    t.boolean "movie_theater"
+    t.boolean "on_site_doctor"
+    t.boolean "time_machine"
   end
 
   create_table "users", force: true do |t|
