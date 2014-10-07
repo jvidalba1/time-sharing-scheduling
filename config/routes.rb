@@ -4,7 +4,12 @@ TimeSharingScheduling::Application.routes.draw do
     collection do
       get "confirm_page"
     end
+
+    resources :reservations, only: [:new, :create, :index] do
+    end
   end
+
+
 
   root 'users#new'
 
