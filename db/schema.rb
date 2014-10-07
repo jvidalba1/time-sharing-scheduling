@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141007011141) do
+ActiveRecord::Schema.define(version: 20141007021201) do
 
   create_table "ratings", force: true do |t|
     t.integer  "rate"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20141007011141) do
     t.boolean  "movie_theater"
     t.boolean  "on_site_doctor"
     t.boolean  "time_machine"
+    t.string   "ip_address"
   end
 
   create_table "users", force: true do |t|
