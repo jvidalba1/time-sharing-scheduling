@@ -13,9 +13,8 @@ class ReservationsController < ApplicationController
   end
 
   def create
-
     @user = User.find(params[:user_id])
-    @reservation = @user.reservations.build(user_params)
+    @reservation = @user.reservations.build(reservation_params)
     @reservation.ip_address = request.remote_ip
 
     if @reservation.save
@@ -39,7 +38,7 @@ class ReservationsController < ApplicationController
   end
 
 
-  def user_params
+  def reservation_params
     params.require(:reservation).permit(:date, :rooms, :user_id, :trip_reason, :pool, :rec_room, :on_site_doctor, :movie_theater, :time_machine)
   end
 end
