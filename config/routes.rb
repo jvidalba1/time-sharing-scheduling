@@ -6,10 +6,11 @@ TimeSharingScheduling::Application.routes.draw do
     end
 
     resources :reservations, only: [:new, :create, :index] do
+      member do
+        get "confirmation"
+      end
     end
   end
-
-
 
   root 'users#new'
 
