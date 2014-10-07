@@ -17,3 +17,6 @@
 
 # Ignore configuration files
 /config/config_files/email.yml
+
+# Database Scheme
+/db/schema.rb

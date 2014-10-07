@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141007021201) do
-
-  create_table "ratings", force: true do |t|
-    t.integer  "rate"
-    t.integer  "reservation_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20141007192655) do
 
   create_table "reservations", force: true do |t|
     t.integer  "user_id"
@@ -33,22 +26,17 @@ ActiveRecord::Schema.define(version: 20141007021201) do
     t.boolean  "on_site_doctor"
     t.boolean  "time_machine"
     t.string   "ip_address"
+    t.integer  "rate"
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",                default: "",    null: false
+    t.string   "email"
     t.string   "first_name"
     t.string   "last_name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.boolean  "confirmed",            default: false
+    t.boolean  "confirmed",    default: false
     t.string   "phone_number"
   end
-
-  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

@@ -23,7 +23,7 @@
         <td><%= r.movie_theater %></td>
         <td><%= r.on_site_doctor %></td>
         <td><%= r.time_machine %></td>
-        <td><%= link_to "Rate", "#" %>
+        <td><%= link_to "Rate", new_user_rating_path(@user.id) %>
       </tr>
     <% end %>
   </table>

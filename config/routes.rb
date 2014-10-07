@@ -11,6 +11,7 @@ TimeSharingScheduling::Application.routes.draw do
         get "confirmation"
       end
     end
+
   end
 
   root 'users#new'
