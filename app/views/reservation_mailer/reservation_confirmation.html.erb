@@ -1,0 +1,25 @@
+<h1>Hello <%= "#{@user.first_name} #{@user.last_name}" %></h1>
+<p>Your reservation was created succesfully</p>
+<table border="1">
+  <tr>
+    <th>Date</th>
+    <th>Rooms</th>
+    <th>Trip reason</th>
+    <th>Pool</th>
+    <th>Rec room</th>
+    <th>Movie theater</th>
+    <th>On site doctor</th>
+    <th>Time machine</th>
+  </tr>
+  <tr>
+    <td><%= @reservation.date %></td>
+    <td><%= @reservation.rooms %></td>
+    <td><%= @reservation.trip_reason %></td>
+    <td><%= @reservation.pool %></td>
+    <td><%= @reservation.rec_room %></td>
+    <td><%= @reservation.movie_theater %></td>
+    <td><%= @reservation.on_site_doctor %></td>
+    <td><%= @reservation.time_machine %></td>
+  </tr>
+</table>
+<p>Thanks!</p>

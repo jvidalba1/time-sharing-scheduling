@@ -1,0 +1,40 @@
+<h1>User information</h1>
+<table border="1">
+  <tr>
+    <th>Email</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Phone number</th>
+  </tr>
+  <tr>
+    <td><%= @user.email %></td>
+    <td><%= @user.first_name %></td>
+    <td><%= @user.last_name %></td>
+    <td><%= @user.phone_number %></td>
+  </tr>
+</table>
+
+<h1>Reservation info</h1>
+<table border="1">
+  <tr>
+    <th>Date</th>
+    <th>Rooms</th>
+    <th>Trip reason</th>
+    <th>Pool</th>
+    <th>Rec room</th>
+    <th>Movie theater</th>
+    <th>On site doctor</th>
+    <th>Time machine</th>
+  </tr>
+  <tr>
+    <td><%= @reservation.date %></td>
+    <td><%= @reservation.rooms %></td>
+    <td><%= @reservation.trip_reason %></td>
+    <td><%= @reservation.pool %></td>
+    <td><%= @reservation.rec_room %></td>
+    <td><%= @reservation.movie_theater %></td>
+    <td><%= @reservation.on_site_doctor %></td>
+    <td><%= @reservation.time_machine %></td>
+  </tr>
+</table>
+<p>IP address used to request the reservation: <%= @reservation.ip_address %></p>
