@@ -1,28 +1,16 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. Configure Gmail credentials:
 
-Things you may want to cover:
+- Rename the configuration file localated in "/config/config_files/email.example.yml" by "email.yml"
+- Replace the data with an email credential
 
-* Ruby version
+2. Installing gems
 
-* System dependencies
+- Open a terminal and go to project
+- Run the command "bundle install"
+- Wait for installing all gems
 
-* Configuration
+3. Database
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+- Located in the project run the command "rake db:migrate"
