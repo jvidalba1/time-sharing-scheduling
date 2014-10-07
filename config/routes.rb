@@ -6,12 +6,13 @@ TimeSharingScheduling::Application.routes.draw do
       get "email_confirmed"
     end
 
-    resources :reservations, only: [:new, :create, :index] do
+    resources :reservations, only: [:new, :create, :index], shallow: true do
       member do
         get "confirmation"
       end
+      get "rating"
+      patch "update_rating"
     end
-
   end
 
   root 'users#new'
