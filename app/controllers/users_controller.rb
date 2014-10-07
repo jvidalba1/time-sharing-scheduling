@@ -29,8 +29,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_attributes(user_params)
-      flash[:notice] = "User updated"
-      redirect_to root_path
+      redirect_to new_user_reservation_path(@user.id)
     else
       flash[:alert] = "Error"
       render :action => 'edit'
