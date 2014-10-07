@@ -11,7 +11,7 @@
       <th>Movie theater</th>
       <th>On site doctor</th>
       <th>Time machine</th>
-      <th>Options</th>
+      <th>Rating</th>
     </tr>
     <% @user.reservations.each do |r| %>
       <tr>
@@ -23,7 +23,13 @@
         <td><%= r.movie_theater %></td>
         <td><%= r.on_site_doctor %></td>
         <td><%= r.time_machine %></td>
-        <td><%= link_to "Rate", new_user_rating_path(@user.id) %>
+        <td>
+          <% if r.rate %>
+            <%= r.rate %>
+          <% else %>
+            <%= link_to "Rate", reservation_reservation_rating_path(r.id) %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </table>
