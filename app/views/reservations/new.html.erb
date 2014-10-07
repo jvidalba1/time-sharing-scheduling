@@ -4,5 +4,12 @@
   <%= f.input :date %>
   <%= f.input :rooms %>
   <%= f.input :trip_reason %>
+  <p>Services</p>
+  <%= f.input :pool, as: :boolean %>
+  <%= f.input :rec_room, as: :boolean %>
+  <%= f.input :movie_theater, as: :boolean %>
+  <%= f.input :on_site_doctor, as: :boolean %>
+  <%= f.input :time_machine, as: :boolean %>
+  </br>
   <%= f.button :submit %>
 <% end %>
