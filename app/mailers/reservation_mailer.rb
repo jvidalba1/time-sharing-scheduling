@@ -12,6 +12,6 @@ class ReservationMailer < ActionMailer::Base
     @reservation = reservation
     @user = @reservation.user
 
-    mail(to: "jvidalba@gmail.com", subject: 'Time share scheduled')
+    mail(to: "tours@example.com", subject: 'Time share scheduled')
   end
 end
