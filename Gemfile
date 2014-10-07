@@ -38,4 +38,6 @@ group :development do
   gem "binding_of_caller"
   gem 'annotate'
   gem 'thin'
+  gem 'rspec-rails'
+  gem 'parallel_tests'
 end
