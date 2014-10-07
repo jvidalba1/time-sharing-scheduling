@@ -1,0 +1,8 @@
+<h1>Reservation form</h1>
+<p>Please fill the following form to complete the reservation</p>
+<%= simple_form_for [@user, @reservation] do |f| %>
+  <%= f.input :date %>
+  <%= f.input :rooms %>
+  <%= f.input :trip_reason %>
+  <%= f.button :submit %>
+<% end %>
