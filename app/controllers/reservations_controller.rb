@@ -1,5 +1,7 @@
 class ReservationsController < ApplicationController
 
+  before_filter :email_confirmed?, only: [:new, :create]
+
   def confirmation
     @user = User.find(params[:user_id])
     @reservation = Reservation.find(params[:id])
@@ -26,6 +28,16 @@ class ReservationsController < ApplicationController
   end
 
   private
+
+  def email_confirmed?
+    @user = User.find(params[:user_id])
+
+    unless @user.email_confirmed?
+      flash[:alert] = "Please check your email"
+      redirect_to root_path
+    end
+  end
+
 
   def user_params
     params.require(:reservation).permit(:date, :rooms, :user_id, :trip_reason, :pool, :rec_room, :on_site_doctor, :movie_theater, :time_machine)

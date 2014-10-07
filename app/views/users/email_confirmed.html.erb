@@ -1,0 +1,33 @@
+<h4>You already confirmed this email</h4>
+<% unless @user.reservations.empty? %>
+  <p>You have <%= @user.reservations.count %> reservations</p>
+  <table border="1">
+    <tr>
+      <th>Date</th>
+      <th>Rooms</th>
+      <th>Trip reason</th>
+      <th>Pool</th>
+      <th>Rec room</th>
+      <th>Movie theater</th>
+      <th>On site doctor</th>
+      <th>Time machine</th>
+      <th>Options</th>
+    </tr>
+    <% @user.reservations.each do |r| %>
+      <tr>
+        <td><%= r.date %></td>
+        <td><%= r.rooms %></td>
+        <td><%= r.trip_reason %></td>
+        <td><%= r.pool %></td>
+        <td><%= r.rec_room %></td>
+        <td><%= r.movie_theater %></td>
+        <td><%= r.on_site_doctor %></td>
+        <td><%= r.time_machine %></td>
+        <td><%= link_to "Rate", "#" %>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>You haven't done any reservation yet</p>
+  <p>Clic <%= link_to "here", new_user_reservation_path(@user.id) %> to book one</p>
+<% end %>
