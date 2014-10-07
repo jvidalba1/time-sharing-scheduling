@@ -39,5 +39,5 @@ group :development do
   gem 'annotate'
   gem 'thin'
   gem 'rspec-rails'
-  gem 'parallel_tests'
+  gem 'capybara'
 end
