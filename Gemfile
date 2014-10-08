@@ -38,6 +38,8 @@ group :development do
   gem "binding_of_caller"
   gem 'annotate'
   gem 'thin'
-  gem 'rspec-rails'
-  gem 'capybara'
+  gem "capybara"
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem 'email_spec'
 end
