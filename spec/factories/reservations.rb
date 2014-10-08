@@ -1,10 +1,6 @@
 FactoryGirl.define do
-  factory :user do
+  factory :reservation do
     email "newuser@example.com"
     confirmed false
-
-    factory :confirmed do
-      confirmed true
-    end
   end
 end

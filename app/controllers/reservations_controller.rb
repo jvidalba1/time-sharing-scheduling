@@ -31,7 +31,6 @@ class ReservationsController < ApplicationController
     @user = User.find(params[:user_id])
     @reservation = @user.reservations.build(reservation_params)
     @reservation.ip_address = request.remote_ip
-
     if @reservation.save
       ReservationMailer.reservation_confirmation(@reservation).deliver!
       ReservationMailer.time_share_scheduled(@reservation).deliver!

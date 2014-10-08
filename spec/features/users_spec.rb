@@ -25,13 +25,14 @@ feature 'Users' do
     expect{
       find('.user_first_name').fill_in 'First name', with: 'Mateo'
       # fill_in 'First name', with: 'New'
-      fill_in 'Last name', with: 'User'
+      fill_in 'Last name', with: 'Vidal'
       fill_in 'Phone number', with: '3008518308'
     }.to change(User, :count).by(0)
     click_button 'Update User'
+    @user.reload
     # save_and_open_page
-    # expect(@user.first_name).to eq('New')
-    # expect(@user.last_name).to eq('User')
-    # expect(@user.phone_number).to eq('3008518308')
+    expect(@user.first_name).to eq('Mateo')
+    expect(@user.last_name).to eq('Vidal')
+    expect(@user.phone_number).to eq('3008518308')
   end
 end
