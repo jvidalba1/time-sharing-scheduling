@@ -16,5 +16,22 @@ feature 'Users' do
     expect(page).to have_content 'newuser@example.com'
   end
 
-
+  scenario 'clic in email confirmation when email hasnt been confirmated' do
+    @user = FactoryGirl.create(:user)
+    visit edit_user_url(@user)
+    within 'h3' do
+      expect(page).to have_content "Thank you, we're back"
+    end
+    expect{
+      find('.user_first_name').fill_in 'First name', with: 'Mateo'
+      # fill_in 'First name', with: 'New'
+      fill_in 'Last name', with: 'User'
+      fill_in 'Phone number', with: '3008518308'
+    }.to change(User, :count).by(0)
+    click_button 'Update User'
+    # save_and_open_page
+    # expect(@user.first_name).to eq('New')
+    # expect(@user.last_name).to eq('User')
+    # expect(@user.phone_number).to eq('3008518308')
+  end
 end

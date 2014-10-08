@@ -41,5 +41,6 @@ group :development do
   gem "capybara"
   gem "rspec-rails"
   gem "factory_girl_rails"
+  gem 'faker'
   gem 'email_spec'
 end
